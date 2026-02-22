@@ -2,7 +2,7 @@ package org.restaurant;
 
 import java.util.Objects;
 
-public class Restaurant {
+public class Restaurant implements Comparable<Restaurant> {
     private String name;
     private int rating;
 
@@ -44,5 +44,15 @@ public class Restaurant {
     @Override
     public int hashCode() {
         return Objects.hash(name, rating);
+    }
+
+    @Override
+    public int compareTo(Restaurant o) {
+        int nameResult = this.name.compareTo(o.name);
+        if(nameResult != 0 ){
+            return nameResult;
+        }
+        return Integer.compare(o.rating, this.rating);
+
     }
 }
