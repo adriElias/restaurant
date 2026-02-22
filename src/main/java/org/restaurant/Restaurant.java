@@ -29,7 +29,7 @@ public class Restaurant {
 
     @Override
     public String toString() {
-        return "Restaurants: \n" + "name: '" + name + "(" + rating + ")";
+        return "Name: '" + name + "(" + rating + ")";
     }
 
     @Override
