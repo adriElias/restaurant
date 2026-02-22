@@ -1,5 +1,7 @@
 package org.restaurant;
 
+import java.util.Objects;
+
 public class Restaurant {
     private String name;
     private int rating;
@@ -28,5 +30,19 @@ public class Restaurant {
     @Override
     public String toString() {
         return "Restaurants: \n" + "name: '" + name + "(" + rating + ")";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(this == o ) return true;
+        if(!(o instanceof Restaurant)) return false;
+        Restaurant restaurant = (Restaurant) o;
+        return rating == restaurant.rating && Objects.equals(name, restaurant.name);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, rating);
     }
 }
